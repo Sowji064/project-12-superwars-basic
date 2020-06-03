@@ -40,7 +40,7 @@ const initPlayers = (players) => {
     // Type your code here
     for (let i = 0; i < players.length; i++) {
         let typeGet = 'villain';
-        if (heroes.includes(players[i])) {
+        if (i % 2 == 0) { // can you explain why you gave this condition da?if heroes are in the array it will return heroes else villains
             typeGet = "hero"
         }
         detailedPlayers.push({
@@ -69,7 +69,11 @@ const buildPlayers = (players, type) => {
     // Type your code here
     for (let i = 0; i < players.length; i++) {
         if (players[i].type == type) {
-            fragment = fragment + "<div class='player'><img src=" + players[i].image + "><div class='name'>" + players[i].name + "</div><div class='strength'>" + players[i].strength + "</div></div>";
+            fragment = `<div class="player">
+            <img src="${players[i].image}" alt=" ">
+            <div class="name">${players[i].name}</div>
+            <div class="strength">${players[i].strength}</div>
+         </div>`;
         }
     }
 
